@@ -1,0 +1,260 @@
+.container {
+    width: 95%;
+    max-width: 110vh;
+    height: 16vh;
+    position: relative;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.2px;
+    background: linear-gradient(to right, white, transparent 50%, white);
+}
+.navLinkheader{
+    font-size:1.6rem;
+    color: white;
+}
+
+
+.video {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+
+.fixaoverlap {
+    position: absolute;
+    top: 72%;
+    width: 100%;
+    height: 5vh; 
+    background: linear-gradient(to bottom, transparent 50%, white 100%);
+}
+
+.navLinkheader {
+    padding: 3vh;
+}
+.navLink {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+}
+
+.burgerIcon {
+    font-size: 1.7rem;
+    padding: 9px; 
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    border-radius: 2px;
+    opacity: 0.6;
+    color: rgb(150, 150, 150); 
+}
+.burgerIcon:hover {
+    font-size: 1.7rem;
+    padding: 9px; 
+    cursor: pointer; 
+    color: rgb(53, 53, 53);
+    opacity: 0.8;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    right: 0; 
+    bottom: -5px; 
+    width: 100%; 
+    height: 2px; 
+    background: white; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+    transform-origin: left; 
+}
+
+.navLink:hover::after {
+    transform: scaleX(1);
+}
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 0.95;
+        transform: translateY(0);
+    }
+}
+.innermenytwo {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2vh;
+    border-radius: 3px;
+    background-color: rgb(253, 253, 253);
+    padding: 2vh;
+    animation: fadeInFromTop 0.5s ease-out forwards;
+    z-index: 100;
+}
+.innermeny{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+justify-content: center;
+
+}
+.navLinkbig {
+    position: relative;
+    text-decoration: none; 
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1vh;
+   
+}
+
+.navLinkbig::after {
+    content: ''; /* Lägger till en tom innehåll för den pseudoelementet */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Startar utan linje */
+    height: 1px; /* Sätt höjden på linjen */
+    background-color: rgb(168, 168, 168); /* Sätt färgen på linjen */
+    transition: width 0.4s ease-out; /* Gör linjens bredd animerad */
+}
+
+.navLinkbig:hover::after {
+    width: 100%; /* När man hover: breddar linjen till 100% av länken */
+}
+
+  .containervideo{
+    position: absolute;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    z-index: 2;
+    top:36%;
+    max-width: 105vh;
+   
+  }
+
+  .containervideodiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+  .overlayText h2 {
+    font-size: 1.8rem; /* text-4xl */
+    font-weight: bold;
+    text-align: left;
+    
+  }
+  
+  .overlayText p {
+    margin-top: 1rem; /* mt-4 */
+    font-size: 1.2rem; /* text-lg */
+  }
+
+  .buttonsContainer{
+    display: flex;
+    margin-top: 1vh;
+    gap:3vh;
+  }
+  .button{
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 1vh;
+    width: 19vh;
+    opacity: 0; /* Startar som osynlig */
+    animation: fadeIn 2s forwards; /* Lägg till fade-in-animationen */
+    transition: background-color 0.5s ease;
+  }
+  .button:hover{
+    background-color: white;
+    color:black;
+  }
+  .headerin{
+    text-align: center;
+    z-index: 0;
+    
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0; /* Börjar som osynlig */
+    }
+    100% {
+      opacity: 1; /* Slutar som helt synlig */
+    }
+  }
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        
+    }
+    .burgerIcon {
+        padding: 10px; 
+    }
+    .innermenytwo {
+        width: 80%;
+        
+    }
+    .overlayText h2 {
+        font-size: 1.32rem;
+        
+      }
+      .containervideo{
+        top:20%;
+     
+      }
+      .overlayText p {
+        margin-top: 1rem; /* mt-4 */
+        font-size: 1.1rem; /* text-lg */
+      }
+
+}
+
+@media screen and (max-width: 768px) {
+  
+  }
+  
+  @media screen and (min-width: 1000px) {
+
+    .containervideodiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        height: 100%;
+      }
+      .buttonsContainer{
+        padding: 3vh;
+      }
+      .overlayText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Detta säkerställer att innehållet placeras till vänster */
+        text-align: left; 
+        padding: 2vh;/* Detta ser till att texten är vänsterjusterad */
+      }
+      .nyaheader {
+        margin-top: 10vh; /* Skjuter denna div längst ner */
+        text-align: center;
+      }
+      
+ 
+  }
+  
