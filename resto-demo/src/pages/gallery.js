@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import videoFile from '../assets/newvideo.mp4';
 import styles from '../styles/homepage.module.css';
 import About from "./About";
 import Services from "./rollingservice";
 import Footer from "./footer";
-import Navbar from "./navbar"; // Importera Navbar-komponenten
+import Navbar from "./navbar"; 
 
-const HomePage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Gallery = () => {
+    const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false); // Ny state för dark mode
 
   const toggleNavbar = () => setIsOpen(!isOpen);
@@ -21,7 +20,6 @@ const HomePage = () => {
   // Funktion för att toggla dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    
     document.body.classList.toggle('darkmode', !darkMode);
     console.log(document.body.classList);  // Debugga genom att logga klasserna // Lägg till eller ta bort dark-mode class på body
   };
@@ -33,13 +31,8 @@ const HomePage = () => {
           backgroundColor: darkMode ? '#5f5f5f' : 'transparent',
           zIndex: 0, /* Gör så att bakgrunden ligger bakom */
         }}>
-          <video className={styles.video} autoPlay muted loop>
-            <source src={videoFile} type="video/mp4" />
-            Din webbläsare stödjer inte video-taggen.
-          </video>
-
-          {/* Lägg till Navbar-komponenten här */}
           <Navbar isOpen={isOpen} toggleNavbar={toggleNavbar} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          
 
           <div className={styles.containervideo}>
             <div className={styles.containervideodiv}>
@@ -95,7 +88,7 @@ const HomePage = () => {
         </button>
       </div>
     </div>
-  );
+    );
 };
 
-export default HomePage;
+export default Gallery;

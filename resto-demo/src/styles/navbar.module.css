@@ -1,0 +1,222 @@
+.mycustomclass {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 85vh;
+    position: relative;
+  }
+  
+  .container {
+    width: 95%;
+    max-width: 110vh;
+    height: 16vh;
+    position: relative;
+    z-index: 20;
+  }
+  
+  .container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.2px;
+    z-index: 1;
+    background: linear-gradient(to right, white, transparent 50%, white);
+  }
+  
+  .navLinkheader {
+    font-size: 1.6rem;
+    color: white;
+  }
+  
+  .video {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+  
+  .navLinkheader {
+    padding: 3vh;
+  }
+  
+  .navLink {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .burgerIcon {
+    font-size: 1.7rem;
+    padding: 9px;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    border-radius: 2px;
+    opacity: 0.6;
+    color: rgb(150, 150, 150);
+  }
+
+  .burgerIcon:hover {
+    font-size: 1.7rem;
+    padding: 9px;
+    cursor: pointer;
+    color: rgb(53, 53, 53);
+    opacity: 0.8;
+  }
+  
+  .navLink::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+  
+  .navLink:hover::after {
+    transform: scaleX(1);
+  }
+  
+  @keyframes fadeInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 0.95;
+      transform: translateY(0);
+    }
+  }
+  
+  .innermenytwo {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2vh;
+    border-radius: 3px;
+    background-color: rgb(253, 253, 253);
+    padding: 2vh;
+    animation: fadeInFromTop 0.5s ease-out forwards;
+    z-index: 100;
+  }
+  
+  .innermeny {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .navLinkbig {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1vh;
+  }
+  
+  .navLinkbig::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(168, 168, 168);
+    transition: width 0.4s ease-out;
+  }
+  
+  .navLinkbig:hover::after {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container {
+      width: 100%;
+    }
+  
+    .burgerIcon {
+      padding: 10px;
+    }
+  
+    .innermenytwo {
+      width: 80%;
+    }
+  
+    .overlayText h2 {
+      font-size: 1.32rem;
+    }
+  
+    .containervideo {
+      top: 20%;
+    }
+  
+    .overlayText p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .switchContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .darkmodefix {
+      display: flex;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .containervideo {
+      top: 34%;
+    }
+  
+    .containervideodiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100%;
+    }
+  
+    .buttonsContainer {
+      padding: 2vh;
+    }
+  
+    .overlayText {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 1vh;
+      max-width: 440px;
+    }
+  
+    .nyaheader {
+      margin-top: 10vh;
+      text-align: center;
+    }
+  
+    .darkmodefixtwo {
+      padding: 3vh;
+      display: none;
+    }
+  
+    .darkmodefix {
+      display: flex;
+      z-index: 1;
+    }
+  }
+  

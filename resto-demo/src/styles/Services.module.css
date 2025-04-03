@@ -1,0 +1,71 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 4vh;
+  }
+  
+  .innerContainer {
+    display: flex;
+    flex-direction: row-reverse; /* Byt till 'row-reverse' för att byta plats på text och karta */
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 3px;
+    max-width: 105vh;
+    background: linear-gradient(to left, rgb(241, 241, 241), transparent 50%, white);
+  }
+  
+  .contactInfo {
+    flex: 1; /* Gör att texten tar upp 50% av platsen */
+    max-width: 105vh;
+    padding: 4vh;
+    color: rgb(68, 68, 68);
+    text-align: center;
+  }
+  
+ 
+  
+  /* När kartan är synlig, ändra opacitet och placering */
+  .mapContainer.visible {
+    opacity: 1;
+    transform: translateY(0); /* Flytta upp kartan till sin ursprungliga position */
+  }
+  
+  iframe {
+    border: 0;
+    border-radius: 3px;
+    
+  }
+  .mapContainer {
+    display: none; /* Kartan är gömd som standard */
+}
+
+.dark .contactInfo {
+  background: linear-gradient(to left, rgb(148, 148, 148), rgb(102, 102, 102));
+  color: rgb(255, 255, 255);
+  
+}
+
+@media (min-width: 1000px) {
+    .mapContainer {
+        flex: 1;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* Gör att kartan är osynlig vid start */
+        transform: translateY(100px); /* Placera kartan utanför skärmen */
+        transition: opacity 1s, transform 1s ease-out; /* Animation för att få kartan att dyka upp */
+      }
+      .contactInfo {
+        flex: 1; /* Gör att texten tar upp 50% av platsen */
+        max-width: 105vh;
+        padding: 2vh;
+        text-align: left;
+      }
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Lägg till en övergångseffekt när kartan blir synlig */
+}

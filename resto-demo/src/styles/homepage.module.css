@@ -1,8 +1,16 @@
+.mycustomclass {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 85vh;
+  position: relative;
+}
 .container {
     width: 95%;
     max-width: 110vh;
     height: 16vh;
     position: relative;
+    z-index: 20;
 }
 
 .container::after {
@@ -12,6 +20,7 @@
     left: 0;
     width: 100%;
     height: 1.2px;
+    z-index: 1;
     background: linear-gradient(to right, white, transparent 50%, white);
 }
 .navLinkheader{
@@ -29,13 +38,7 @@
 }
 
 
-.fixaoverlap {
-    position: absolute;
-    top: 72%;
-    width: 100%;
-    height: 5vh; 
-    background: linear-gradient(to bottom, transparent 50%, white 100%);
-}
+
 
 .navLinkheader {
     padding: 3vh;
@@ -102,6 +105,7 @@
     padding: 2vh;
     animation: fadeInFromTop 0.5s ease-out forwards;
     z-index: 100;
+    
 }
 .innermeny{
     width: 100%;
@@ -117,9 +121,7 @@ justify-content: center;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 1vh;
-   
 }
-
 .navLinkbig::after {
     content: ''; /* Lägger till en tom innehåll för den pseudoelementet */
     position: absolute;
@@ -144,16 +146,17 @@ justify-content: center;
     align-content: center;
     flex-direction: column;
     z-index: 2;
-    top:36%;
+    top:29%;
     max-width: 105vh;
-   
   }
 
   .containervideodiv{
+    padding: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+   
     
   }
 
@@ -201,6 +204,69 @@ justify-content: center;
     }
   }
 
+.scrollTopButton {
+  position: fixed;
+  bottom: 5%; 
+  right: 12px; 
+ background-color: rgb(170, 170, 170);
+ opacity: 0.8;
+  color: rgb(0, 0, 0); 
+  border: none;
+  border-radius: 20%;
+  width: 40px;      
+  height: 40px;
+  font-size: 24px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.scrollTopButton:hover {
+ background: linear-gradient(to right, white, transparent 50%, rgb(199, 199, 199));/* Mörkare blå vid hover */
+}
+
+
+.darkmodefix{
+  position: absolute;
+  top:1%;
+  right:3%;
+  display: none;
+
+}
+.toggleButton {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.toggleActive {
+  transform: translateX(13px);
+  width: 17px;
+  height: 17px;
+}
+
+.toggleInactive {
+  transform: translateX(-7px);
+  width: 17px;
+  height: 17px;
+}
+
+
+.darkmodefixtwo{
+  padding:3vh;
+  display: flex;
+}
+
+
+
 @media screen and (max-width: 400px) {
     .container {
         width: 100%;
@@ -228,11 +294,22 @@ justify-content: center;
 
 }
 
-@media screen and (max-width: 768px) {
-  
+@media screen and (min-width: 768px) {
+  .switchContainer {
+    display: flex; /* Gör switchen synlig på skärmar som är 768px eller större */
+    justify-content: center;
+    align-items: center;
+  }
+  .darkmodefix{
+    display: flex;
+  }
   }
   
   @media screen and (min-width: 1000px) {
+    .containervideo{
+        top:34%;
+       
+      }
 
     .containervideodiv {
         display: flex;
@@ -241,18 +318,27 @@ justify-content: center;
         height: 100%;
       }
       .buttonsContainer{
-        padding: 3vh;
+        padding: 2vh;
       }
       .overlayText {
         display: flex;
         flex-direction: column;
         align-items: flex-start; /* Detta säkerställer att innehållet placeras till vänster */
         text-align: left; 
-        padding: 2vh;/* Detta ser till att texten är vänsterjusterad */
+        padding: 1vh;/* Detta ser till att texten är vänsterjusterad */
+        max-width: 440px;
       }
       .nyaheader {
         margin-top: 10vh; /* Skjuter denna div längst ner */
         text-align: center;
+      }
+      .darkmodefixtwo{
+        padding:3vh;
+        display: none;
+      }
+      .darkmodefix{
+        display: flex;
+        z-index: 1;
       }
       
  
