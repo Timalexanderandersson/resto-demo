@@ -228,7 +228,6 @@ justify-content: center;
  background: linear-gradient(to right, white, transparent 50%, rgb(199, 199, 199));/* Mörkare blå vid hover */
 }
 
-
 .darkmodefix{
   position: absolute;
   top:1%;

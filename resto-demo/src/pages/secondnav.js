@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import styles from '../styles/navbar.module.css';
+import styles from '../styles/secondnavbar.module.css';
 
 const NavbarTwo = ({ isOpen, toggleNavbar, darkMode, toggleDarkMode }) => {
   return (
     <div className={styles.container}>
       <div className="flex justify-between items-center p-4 w-full">
-        <h1 className={styles.navLinkheader}>BrandName</h1>
+        <h1 className={`${styles.navLinkheader} ${darkMode ? 'dark' : ''}`}>BrandName</h1>
 
         {/* Navbar Links and Dark Mode Button */}
         <div className="flex items-center space-x-6 w-[40vh] justify-between">
           <div className="hidden md:flex space-x-9">
-            <a href="#Hem" className={styles.navLink}>Hem</a>
-            <Link to="/galleri" className={styles.navLink}>Galleri</Link>
-            <a href="#oss" className={styles.navLink}>Om oss</a>
-            <a href="#contact" className={styles.navLink}>Kontakt</a>
+            <Link to="/Hem" className={`${styles.navLink} ${darkMode ? 'dark' : ''}`}>Hem</Link>
+            <Link to="/galleri" className={`${styles.navLink} ${darkMode ? 'dark' : ''}`}>Galleri</Link>
+            <a href="#oss" className={`${styles.navLink} ${darkMode ? 'dark' : ''}`}>Om oss</a>
+            <a href="#contact" className={`${styles.navLink} ${darkMode ? 'dark' : ''}`}>Kontakt</a>
           </div>
           <div className="flex items-center space-x-3">    
           </div>
@@ -31,10 +31,10 @@ const NavbarTwo = ({ isOpen, toggleNavbar, darkMode, toggleDarkMode }) => {
       <div className={`md:hidden ${isOpen ? "block" : "hidden"} ${styles.customMenu}`}>
         <div className={styles.innermeny}>
           <div className={styles.innermenytwo}>
-            <a href="#Hem" className={styles.navLinkbig}>Hem</a>
-            <a to="/galleri" className={styles.navLinkbig}>Galleri</a>
-            <a href="#oss" className={styles.navLinkbig}>Om oss</a>
-            <a href="#contact" className={styles.navLinkbig}>Kontakt</a>
+            <Link to="/Hem" className={`${styles.navLinkbig} ${darkMode ? 'dark' : ''}`}>Hem</Link>
+            <a href="#galleri" className={`${styles.navLinkbig} ${darkMode ? 'dark' : ''}`}>Galleri</a>
+            <a href="#oss" className={`${styles.navLinkbig} ${darkMode ? 'dark' : ''}`}>Om oss</a>
+            <a href="#contact" className={`${styles.navLinkbig} ${darkMode ? 'dark' : ''}`}>Kontakt</a>
 
             <div className={styles.darkmodefixtwo}>
               <span className={`text-dark mr-2 ${darkMode ? "hidden" : "block"}`}>Mörk</span>

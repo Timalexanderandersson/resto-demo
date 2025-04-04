@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from '../styles/homepage.module.css';
 import About from "./About";
-import Services from "./rollingservice";
 import Footer from "./footer";
-import Navbar from "./navbar"; 
+import NavbarTwo from "./secondnav";
 
 const Gallery = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +30,7 @@ const Gallery = () => {
           backgroundColor: darkMode ? '#5f5f5f' : 'transparent',
           zIndex: 0, /* Gör så att bakgrunden ligger bakom */
         }}>
-          <Navbar isOpen={isOpen} toggleNavbar={toggleNavbar} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <NavbarTwo isOpen={isOpen} toggleNavbar={toggleNavbar} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           
 
           <div className={styles.containervideo}>
@@ -65,7 +64,7 @@ const Gallery = () => {
       </div>
 
       <About darkMode={darkMode} />
-      <Services darkMode={darkMode} />
+      
       <Footer darkMode={darkMode} />
       <button 
         className={styles.scrollTopButton} 
